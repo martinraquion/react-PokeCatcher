@@ -31,3 +31,395 @@
     transform: rotate(360deg);
   }
 }
+
+
+*{
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+body{
+  /* background: whitesmoke; */
+  background-image: linear-gradient(-60deg, rgb(95, 107, 202), rgb(255, 237, 103));
+  /* background: no-repeat; */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+}
+
+.main-content{
+  font-family: 'Prosto One', cursive;
+}
+
+/* header */
+.header{
+  font-family: 'Bangers', cursive;
+  width: 100%;
+  height: 70%;
+  background: #EF5350;
+  /* border-bottom: 3px solid #CC0000;  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.icon{
+  /* border: 1px solid black; */
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 20%;
+  height: 90%;
+}
+
+.icon img{
+  height: 70%;
+  width: 40%;
+}
+
+.logo-text{
+  color: #FFDE00;
+  font-size: 3em;
+  text-shadow: -2px 0 #3B4CCA, 0 2px #3B4CCA, 2px 0 #3B4CCA, 0 -2px #3B4CCA;
+}
+/* header */
+
+/* main */
+.main-content{
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: rgb(96, 106, 187); */
+  
+  
+}
+
+.main-wrapper{
+  /* border: 1px solid black; */
+  width: 90%;
+  height:99%;
+  display: flex;
+  align-items:center;
+  justify-content: space-evenly;
+
+}
+
+.container-sm{
+  /* border: 1px solid black; */
+  height: 99%;
+  width:  48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center 
+  
+}
+
+.container-lg{
+  /* border: 1px solid black; */
+  height: 99%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+/* FORM */
+.form-container{
+  border:3px solid #EF5350;
+  border-radius: 10px;
+  background: rgb(239, 83, 80, 0.3);
+  width:95%;
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 3px 3px #3B4CCA;
+  
+}
+
+.form-wrap{
+  /* border: 1px solid black; */
+  /* display: flex;     */
+  width: 60%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.btn-wrap{
+  /* border: 1px solid black; */
+  width: 35%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.select-inp{
+  font-family: 'Prosto One', cursive;
+  border: 2px solid #EF5350;
+  background: white;
+  height: 40px;
+  font-size: .8em;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.select-label{
+  font-size: .9em;
+
+}
+
+.explore-btn{
+  padding: 10%;
+  background: #EF5350;
+  /* border: none; */
+  color: #FFDE00;
+  text-shadow: -1px 0 #3B4CCA, 0 1px #3B4CCA, 1px 0 #3B4CCA, 0 -1px #3B4CCA;
+  font-family: 'Prosto One', cursive;
+  font-size: 1.1em;
+  border-radius: 10px;
+  border: 3px solid #B3A125;  
+  cursor: pointer;  
+
+}
+
+.explore-btn:disabled{
+  background: rgb(233, 135, 134, 0.3);
+  cursor: not-allowed;
+  border: 1px solid rgb(211, 116, 116);
+  color: gray; 
+  text-shadow: none;
+  
+}
+
+.founded-text{
+  color: #FFDE00;
+  font-size: 1.5em;
+  text-shadow: -2px 0 #3B4CCA, 0 2px #3B4CCA, 2px 0 #3B4CCA, 0 -2px #3B4CCA;
+}
+
+/* FORM END */
+
+/* ENCOUNTER */
+.poke-info{
+  border: 3px solid #B3A125;
+  border-radius: 10px;
+  width:95%;
+  height: 74%;
+  background: rgb(179, 161, 37, 0.2);
+  box-shadow: 3px 3px #EF5350;
+}
+
+.box-title{
+  width: 100%;
+  height: 7%;
+  /* background: #FFDE00; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.found-cont{
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  width: 96%;
+  margin: auto;
+  height: 500px;
+  background: rgb(179, 161, 37, 0.3);
+  /* border: 1px solid #B3A125; */
+  margin-top: 20px
+}
+
+.found-cont-captured{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96%;
+  margin: auto;
+  height: 500px;
+  background: rgb(179, 161, 37, 0.3);
+  /* border: 1px solid #B3A125; */
+  margin-top: 20px
+}
+
+.details-cont{
+  width: 45%;
+  height: 95%;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.image-name-cont{
+  /* border: 1px solid black; */
+  /* background:  */
+  width: 45%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.details{
+  height: 60%;
+  /* border: 1px solid black; */
+  width: 99%;
+  /* margin-top: 40px; */
+  /* background: rgb(179, 161, 37, 0.5); */
+  font-size: .76em;
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.stat-name{
+  margin-top: 60px;
+  color: #FFDE00;
+  /* font-size: 1.5em; */
+  text-shadow: -2px 0 #3B4CCA, 0 2px #3B4CCA, 2px 0 #3B4CCA, 0 -2px #3B4CCA;
+  
+}
+.stat-num{
+  margin-top: 60px;
+  color: #3B4CCA;
+  /* font-size: 1.5em; */
+  text-shadow: -.0.8px 0 #888888, 0 0.8px #888888, 0.8px 0 #888888, 0 -0.8px #888888;
+}
+.img-name{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.catch-btn{
+  padding: 10px;
+  width: 80%;
+  margin-top: 20px;
+  background: #B3A125;
+  border: none;
+  color: #FFDE00;
+  text-shadow: -2px 0 #3B4CCA, 0 2px #3B4CCA, 2px 0 #3B4CCA, 0 -2px #3B4CCA;
+  font-family: 'Prosto One', cursive;
+  font-size: 1.3em;
+  border-radius: 10px;
+  border: 3px solid #3B4CCA;  
+  cursor: pointer;  
+  
+}
+
+.capture-text{
+  color: #FFDE00;
+  font-size: 1.5em;
+  text-shadow: -2px 0 #3B4CCA, 0 2px #3B4CCA, 2px 0 #3B4CCA, 0 -2px #3B4CCA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.capture-subtext{
+  color: #3B4CCA;
+  font-size: .8em;
+  text-shadow: none;
+  margin-top: 10px;
+  
+}
+
+/* ENCOUNTER END */
+
+
+/* MY POKEMONS */
+.my-poke{
+  border: 3px solid #3B4CCA;
+  border-radius: 10px;
+  background: rgb(59, 76, 202, 0.4);
+  width: 95%;
+  height: 97%;
+  box-shadow: 3px 3px #99a71f;
+  
+}
+
+.captured-box{
+  /* border: 1px solid black; */
+  height: auto;
+  width: 99%;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  flex-wrap: wrap;
+}
+
+.captured-poke{
+  height: 200px;
+  width: 200px;
+  background: rgb(218, 214, 214, 0.2);
+  /* border: 1px solid black; */
+  box-shadow: 3px 3px #888888;
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img-captured{
+  height: 55%;
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+/* MY POKEMONS END */
+
+/* main colors*/
+
+
+
+.b-red1{
+  background: #FF0000;
+}
+
+.b-red2{
+  background: #CC0000;
+}
+
+.b-blue{
+  background: #3B4CCA;
+}
+
+.b-yellow{
+  background: #FFDE00;
+}
+
+.b-gold{
+  background: #B3A125
+}
+
+.text-white{
+  color: white;
+}
+
+.text-red{
+  color: #EF5350;
+}
+.hide{
+  display: none;
+}

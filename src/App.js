@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
-function App() {
+
+import PokeHeader from './components/PokeHeader'
+import SelectLocation from './components/SelectLocation'
+import Encounter from './components/Encounter'
+import Captured from './components/Captured'
+
+
+
+
+class App extends Component {
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <PokeHeader />
+      <div className="main-content">
+      <div className="main-wrapper">
+      <div className="container-sm">
+      <SelectLocation />
+      <Encounter />
+      </div> 
+      <div class="container-lg">
+      <Captured />
+
+      </div>
+      </div>
+      </div>
     </div>
   );
+  }
 }
 
 export default App;
