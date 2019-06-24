@@ -5,8 +5,7 @@ import './App.css';
 import PokeHeader from './components/PokeHeader'
 import SelectLocation from './components/SelectLocation'
 import Encounter from './components/Encounter'
-import Captured from './components/Captured'
-
+import CapturedBox from './components/CapturedBox'
 
 
 
@@ -14,16 +13,15 @@ class App extends Component {
   render(){
   return (
     <div className="App">
-    <PokeHeader />
+      <PokeHeader />
       <div className="main-content">
       <div className="main-wrapper">
       <div className="container-sm">
       <SelectLocation />
       <Encounter />
       </div> 
-      <div class="container-lg">
-      <Captured />
-
+      <div className="container-lg">
+      <CapturedBox />
       </div>
       </div>
       </div>
