@@ -12,7 +12,7 @@ export default class Captured extends Component{
       </div>
       
     <Founded />
-    {/* <ExploreMore /> */}
+    <ExploreMore />
   
      
   </div>
