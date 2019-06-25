@@ -1,10 +1,15 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import CapturedPoke from './Captured/CapturedPoke'
 
 
-export default class CapturedBox extends Component{
-    render(){
+export default function CapturedBox({capturepoke}){
+    console.log(capturepoke)
+
+    // if(capturepoke.length!==0){
+    //     var name = capturepoke[0].name
+    // }
+    
     return(
       <div className="my-poke">
               <div className="box-title b-blue">
@@ -16,5 +21,5 @@ export default class CapturedBox extends Component{
               </div>
               </div>
     )
-    }
+    
 }

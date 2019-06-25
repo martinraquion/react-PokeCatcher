@@ -1,23 +1,26 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-export default class Founded extends Component{
-    render(){
+// console.log(this.state.areas)
+
+export default function Founded({pokemondataAll}){
+        
+        console.log(pokemondataAll.name)
         return(
             <div className="found-cont" >
             <div className="details-cont">
-                    <span className="founded-text" style={{'marginTop': '20px'}}>You've founded:</span>
+                    <span className="founded-text" style={{'marginTop': '20px'}}>You've founded: </span>
                    
                     <div className="img-name">
-                    <img src="" alt="" width="200px" height="200px" id="poke-image" />
+                    <img src='' alt="" width="200px" height="200px" id="poke-image" />
                     </div>
-                     <span className="founded-text" id="founded-text"></span>
+                     <span className="founded-text" id="founded-text">{pokemondataAll.name}</span>
                     <button className="catch-btn" id="catch-btn">Catch</button>
             </div>
             
             <div className="image-name-cont">
             <div className="details">
                     <div className="stat-name">
-                       <p>SPEED:</p><br />
+                       <p>SPEED: </p><br />
                        <p>SPECIAL DEFENSE:</p><br />
                        <p>SPECIAL ATTACK:</p><br />
                        <p>DEFENSE:</p><br />
@@ -25,7 +28,7 @@ export default class Founded extends Component{
                        <p>HP:</p>
                     </div>
                     <div className="stat-num">
-                         <p id="speed">40</p><br />
+                         <p id="speed"></p><br />
                          <p id = "sp-defense">50</p><br />
                          <p id = "sp-attack">50</p><br />
                          <p id = "defense">20</p><br />
@@ -40,4 +43,3 @@ export default class Founded extends Component{
         </div>
         )
     }
-}

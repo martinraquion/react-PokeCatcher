@@ -17,7 +17,9 @@ class App extends Component {
       locations: [],
       areas: [],
       possibleEncounters: [],
-      loading: true
+      loading: true,
+      pokemon: [],
+      capturedPokemon: [],
     }
   }
 
@@ -72,6 +74,7 @@ class App extends Component {
             .then(res => {
              this.setState({
                locations: res.data.locations,
+               areas: []
              })
             })
             .then(res2 => console.log(res2))            
@@ -86,25 +89,58 @@ class App extends Component {
         //  possibleEncounters: res.data.
        })
       })
+      .then(res => {
+        axios.get(this.state.areas[0].url)
+              .then(res => {
+                this.setState({
+                  possibleEncounters: res.data.pokemon_encounters,
+                  // CatchedPoke: this.state.possibleEncounters[Math.floor(Math.random()*3)].pokemon.name
+                })
+              })
+      })
+
     }
     // else if(url.includes('location-area')){
     //   console.log('hi')
     // }
   }
-
+  
   handleAreaChange = (url) =>{
     axios.get(url)
-          .then(res => 
-            {
+          .then(res => {
             this.setState({
-              possibleEncounters: res.data.pokemon_encounters
+              possibleEncounters: res.data.pokemon_encounters,
+              // CatchedPoke: this.state.possibleEncounters[0].pokemon.name
             })
-          }
-          )
-          
-  }
+          })
+        }
 
- 
+  getPokemon = (pokemon) =>{
+  return (
+    pokeApi.get(`pokemon/${pokemon}`)
+          .then(res=>{
+            this.setState({
+            pokemon: res.data
+            })
+            // console.log(this.state.pokemon)   
+            })
+          )
+        }
+
+        capturedPoke = (cap) => {
+          var pokedex = this.state.capturedPokemon.concat(cap);
+          var len = this.state.capturedPokemon.length;
+          console.log(pokedex)
+          if (len !==6 ) {
+            return(
+              this.setState({
+                capturedPokemon: pokedex
+              })
+            )
+          }
+          
+        }
+
   render(){
   return (
     <div className="App">
@@ -120,12 +156,14 @@ class App extends Component {
       changeLocation = {this.handleLocationChange}
       changeArea = {this.handleAreaChange}
       getPokemon = {this.state.possibleEncounters}
+      // pokemon = {this.state.CatchedPoke}
+      randomPoke={this.getPokemon}
       />
       
-      <Encounter />
+      <Encounter pokemondata = {this.state.pokemon} myPoke={this.capturedPoke}/>
       </div> 
       <div className="container-lg">
-      <CapturedBox />
+      <CapturedBox capturedpoke = {this.state.capturedPokemon}/>
       </div>
       </div>
       </div>

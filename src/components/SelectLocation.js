@@ -10,9 +10,26 @@ function PokeSelector({handleChange, items}){
     </select> 
   )
 }
-
-
-
+ 
+function Explore({ pokemons, getRandPokemon}) {
+  return(
+    <button 
+    value="EXPLORE" 
+    className="explore-btn" 
+    id="explore-btn" 
+    onClick={()=>{
+      var length = pokemons.length
+      var randNumber = Math.floor(Math.random() * length);
+      var randPokemons = pokemons[randNumber];
+      getRandPokemon(randPokemons.pokemon.name)
+      document.getElementById('found-cont').classList.remove('hide')
+      document.getElementById('found-cont-captured').classList.add('hide')
+    }}
+    >
+    EXPLORE
+    </button>
+  )
+}
 
 
 export default function SelectLocation({
@@ -22,13 +39,17 @@ export default function SelectLocation({
   areas=[], 
   getPokemon = [],
   changeLocation,
-  changeArea
+  changeArea,
+  randomPoke
+  
   }){
     
-    function handleExplore(){
-      let random = Math.floor(Math.random()*getPokemon.length)
-      console.log(getPokemon[random].pokemon.name)
-    }
+    // function handleExplore(){
+    //   let random = Math.floor(Math.random()*getPokemon.length)
+    //   let PokeName = getPokemon[random].pokemon.name
+    //   console.log(PokeName)
+    //   // console.log(pokemon)
+    // }
 
     return(
       <div className="form-container">
@@ -45,14 +66,7 @@ export default function SelectLocation({
           }
       </div>
       <div className="btn-wrap" id="btn-wrap">
-          <button 
-          value="EXPLORE" 
-          className="explore-btn" 
-          id="explore-btn" 
-          disabled={!areas.length}
-          onClick={handleExplore}>
-          EXPLORE
-          </button>
+      <Explore pokemons={getPokemon} getRandPokemon={randomPoke}/>
       </div>
     </div>
     )
