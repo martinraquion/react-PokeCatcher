@@ -20,6 +20,7 @@ class App extends Component {
       loading: true,
       pokemon: [],
       capturedPokemon: [],
+      disabled: false
     }
   }
 
@@ -74,13 +75,29 @@ class App extends Component {
             .then(res => {
              this.setState({
                locations: res.data.locations,
-               areas: []
+               areas:[],
+               disabled: this.state.areas? false:true
              })
+            //  console.log(this.state.locations)
+             pokeApi.get(`location/${this.state.locations[0].name}`)
+                    .then(res => {
+                      if(res.data.areas.length!==0){
+                      this.setState({
+                        areas: res.data.areas
+                      })
+                      }
+                      else{
+                        this.setState({
+                          disabled: true
+                        })
+                      }
+                    })
             })
-            .then(res2 => console.log(res2))            
+            
+            
+                      
             
     }
-
     else if(url.includes('location')){
       axios.get(url)
       .then(res => {
@@ -90,13 +107,21 @@ class App extends Component {
        })
       })
       .then(res => {
+        if(this.state.areas.length!==0){
         axios.get(this.state.areas[0].url)
               .then(res => {
                 this.setState({
                   possibleEncounters: res.data.pokemon_encounters,
                   // CatchedPoke: this.state.possibleEncounters[Math.floor(Math.random()*3)].pokemon.name
+                  disabled: false 
                 })
               })
+            }
+          else{
+            this.setState({
+              disabled: true  
+            })     
+          }
       })
 
     }
@@ -130,7 +155,7 @@ class App extends Component {
         capturedPoke = (cap) => {
           var pokedex = this.state.capturedPokemon.concat(cap);
           var len = this.state.capturedPokemon.length;
-          console.log(pokedex)
+          // console.log(pokedex)
           if (len !==6 ) {
             return(
               this.setState({
@@ -156,6 +181,7 @@ class App extends Component {
       changeLocation = {this.handleLocationChange}
       changeArea = {this.handleAreaChange}
       getPokemon = {this.state.possibleEncounters}
+      disabled = {this.state.disabled}
       // pokemon = {this.state.CatchedPoke}
       randomPoke={this.getPokemon}
       />

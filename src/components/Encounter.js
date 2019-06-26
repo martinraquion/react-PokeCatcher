@@ -17,8 +17,11 @@ import ExploreMore from './Encounter/ExploreMore'
 //   )
 // }
 
+var counter = 0;
+
 function CaptureBtn({pokemondata, myPokemon}) {
   return(
+    counter<6? 
     <button 
     className="catch-btn" 
     id="catch-btn"
@@ -27,10 +30,18 @@ function CaptureBtn({pokemondata, myPokemon}) {
       myPokemon(pokemondata)
       document.getElementById('found-cont').classList.add('hide')
       document.getElementById('found-cont-captured').classList.remove('hide')
+      counter ++;
     }}
     >Catch</button>
+    :
+    <button 
+    className="catch-btn" 
+    style = {{'border':'3px solid red', 'cursor':'not-allowed'}}
+    id="catch-btn" disabled>Pokedex is full</button>
   )
 }
+
+
 
 export default function Encounter({pokemondata, myPoke}){
 

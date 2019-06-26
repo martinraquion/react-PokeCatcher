@@ -3,17 +3,24 @@ import React from 'react';
 
 function PokeSelector({handleChange, items}){
   return(
+    (items.length!==0)? 
     <select onChange={e => handleChange(e.target.value)} disabled={!items.length} className="select-inp"> 
     {items.map(item=>(
       <option key={item.url} value={item.url}>{item.name}</option>
     ))}
-    </select> 
+    </select>
+    :
+    <select className="select-inp" disabled> 
+    <option>Select New Location</option>
+    </select>
+     
   )
 }
  
-function Explore({ pokemons, getRandPokemon}) {
+function Explore({ pokemons, getRandPokemon, areas, disabled}) {
   return(
     <button 
+    disabled={disabled}
     value="EXPLORE" 
     className="explore-btn" 
     id="explore-btn" 
@@ -40,7 +47,8 @@ export default function SelectLocation({
   getPokemon = [],
   changeLocation,
   changeArea,
-  randomPoke
+  randomPoke,
+  disabled
   
   }){
     
@@ -66,7 +74,7 @@ export default function SelectLocation({
           }
       </div>
       <div className="btn-wrap" id="btn-wrap">
-      <Explore pokemons={getPokemon} getRandPokemon={randomPoke}/>
+      <Explore pokemons={getPokemon} getRandPokemon={randomPoke} areas={areas} disabled={disabled}/>
       </div>
     </div>
     )
