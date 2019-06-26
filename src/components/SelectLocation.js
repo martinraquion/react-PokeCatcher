@@ -17,7 +17,7 @@ function PokeSelector({handleChange, items}){
   )
 }
  
-function Explore({ pokemons, getRandPokemon, areas, disabled}) {
+function Explore({ pokemons, getRandPokemon,disabled}) {
   return(
     <button 
     disabled={disabled}
